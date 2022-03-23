@@ -1,8 +1,10 @@
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      # This step checks out a copy of your repository.
-      - uses: actions/checkout@v2
-      # This step references the directory that contains the action.
-      - uses: ./.github/actions/hello-world-action
+name: "Example"
+description: "Receives file and generates output"
+inputs:
+  file-path: # id of input
+    description: "Path to test script"
+    required: true
+    default: "test-file.js"
+outputs:
+  results-file: # id of output
+    description: "Path to results file"
